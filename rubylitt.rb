@@ -11,23 +11,16 @@ class Rubylitt < Sinatra::Base
     serve '/css', from: 'app/css'
     serve '/img', from: 'app/img'
 
-    css :cssapp, '/css/app.css', [
-      '/css/normalize.css',
-      '/css/foundation.css'
-    ]
-
-    js :foundation, [
-      '/js/foundation/foundation.js',
-      '/js/foundation/foundation.*.js'
+    css :cssapp, [
+      '/css/*.css'
     ]
 
     js :jsapp, [
-      '/js/vendor/*.js',
-      '/js/app.js'
+      '/js/*.js'
     ]
 
-    css_compression :sass  # :simple | :sass | :yui | :sqwish
-    js_compression  :jsmin # :jsmin | :yui | :closure | :uglify
+    css_compression :simple # :simple | :sass | :yui | :sqwish
+    js_compression  :jsmin  # :jsmin | :yui | :closure | :uglify
   end
 
   get '/' do
