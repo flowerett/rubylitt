@@ -8,19 +8,17 @@ gem 'slim'
 
 # == Frontend
 gem 'sass'
-# gem 'foundation'
-# gem 'compass'
 
 group :development do
   gem 'thin'
-  gem 'shotgun'
   gem 'pry'
+
+  gem 'capistrano', '~> 3.1'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
 end
 
 group :test do
   gem 'rspec'
   gem 'capybara'
 end
-
-# gem 'capistrano'
-# gem 'rvm-capistrano'
