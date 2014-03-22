@@ -24,6 +24,7 @@ class Rubylitt < Sinatra::Base
   end
 
   get '/' do
+    @time = Time.now
     slim :index
   end
 
